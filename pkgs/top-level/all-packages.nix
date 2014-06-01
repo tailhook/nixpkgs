@@ -1126,6 +1126,8 @@ let
     json_c = json-c-0-11; # won't configure with 0.12; others are vulnerable
   };
 
+  grin = callPackage ../tools/text/grin/default.nix { };
+
   groff = callPackage ../tools/text/groff {
     ghostscript = null;
   };
@@ -1406,7 +1408,7 @@ let
 
   mdbtools = callPackage ../tools/misc/mdbtools { };
 
-  mdbtools_git = callPackage ../tools/misc/mdbtools/git.nix { 
+  mdbtools_git = callPackage ../tools/misc/mdbtools/git.nix {
     inherit (gnome) scrollkeeper;
   };
 
@@ -4275,7 +4277,7 @@ let
   dclib = callPackage ../development/libraries/dclib { };
 
   dillo = callPackage ../applications/networking/browsers/dillo {
-    fltk = fltk13;  
+    fltk = fltk13;
   };
 
   directfb = callPackage ../development/libraries/directfb { };
@@ -10010,11 +10012,11 @@ let
   cinnamon = recurseIntoAttrs rec {
     callPackage = newScope pkgs.cinnamon;
     inherit (gnome3) gnome_common libgnomekbd gnome-menus zenity;
-    
+
     muffin = callPackage ../desktops/cinnamon/muffin.nix { } ;
-    
+
     cinnamon-control-center = callPackage ../desktops/cinnamon/cinnamon-control-center.nix{ };
-    
+
     cinnamon-settings-daemon = callPackage ../desktops/cinnamon/cinnamon-settings-daemon.nix{ };
 
     cinnamon-session = callPackage ../desktops/cinnamon/cinnamon-session.nix{ } ;
