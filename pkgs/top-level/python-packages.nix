@@ -3274,6 +3274,7 @@ rec {
       url = "http://pypi.python.org/packages/source/g/greenlet/${name}.tar.gz";
       md5 = "8d75d7f3f659e915e286e1b0fa0e1c4d";
     };
+    doCheck = false;
 
     meta = {
       homepage = http://pypi.python.org/pypi/greenlet;
@@ -9058,4 +9059,9 @@ rec {
     };
   };
 
+}) // optionalAttrs isPy33 (
+  with pythonPackages;
+{
+  zorro = callPackage ../development/python-modules/zorro { };
 }); in pythonPackages
+
