@@ -113,7 +113,7 @@ python.stdenv.mkDerivation (attrs // {
     # work as expected
 
     # --old-and-unmanagable:
-    # instruct setuptools not to use eggs but fallback to plan package install 
+    # instruct setuptools not to use eggs but fallback to plan package install
     # this also reduces one .pth file in the chain, but the main reason is to
     # force install process to install only scripts for the package we are
     # installing (otherwise it will install scripts also for dependencies)
@@ -161,7 +161,7 @@ python.stdenv.mkDerivation (attrs // {
     ${preShellHook}
     export PATH="/tmp/$name/bin:$PATH"
     export PYTHONPATH="/tmp/$name/lib/${python.libPrefix}/site-packages:$PYTHONPATH"
-    python setup.py develop --prefix /tmp/$name
+    ${python.executable} setup.py develop --prefix /tmp/$name
     ${postShellHook}
   '';
 
