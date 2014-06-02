@@ -10790,6 +10790,8 @@ let
 
   thinkfan = callPackage ../tools/system/thinkfan { };
 
+  tilenol = callPackage ../applications/window-managers/tilenol { };
+
   vice = callPackage ../misc/emulators/vice {
     libX11 = xlibs.libX11;
     giflib = giflib_4_1;
