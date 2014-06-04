@@ -6,8 +6,7 @@ python33Packages.buildPythonPackage rec {
   namePrefix = "";
 
   src = fetchgit {
-    #url = "git://github.com/tailhook/tilenol";
-    url = "git://localhost/home/pc/dev/tilenol";
+    url = "git://github.com/tailhook/tilenol";
     sha256 = "1gcx15yh56b94wck2jrslq2vzgy22fz9l8b4ilncwhxridn22v07";
   };
 
